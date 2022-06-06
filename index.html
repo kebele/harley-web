@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>harley</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 
+    THANKS TO Online Tutorials
+    https://www.youtube.com/c/OnlineTutorials4Designers
+    -->
+    <section class="main">
+      <header>
+        <a href="#"><img src="hdlogo1.png" alt="logo" class="logo" /></a>
+        <div class="toggle"></div>
+        <ul class="navigation">
+          <li><a href="#">top features</a></li>
+          <li><a href="#">gallery</a></li>
+          <li><a href="#">store</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <h2>road<span>king</span></h2>
+        <!-- <a href="#" class="btn">ride now</a> -->
+        <!-- <img src="bike.png" alt="bike" class="bike" /> -->
+        <img src="roadking4.png" alt="bike" class="bike" />
+      </div>
+      <!-- SLIDER -->
+      <div class="slider">
+        <div class="slides active">
+          <!-- <h2><span>engine</span><br />Milwaukee-Eight® 107</h2> -->
+          <h2><span>engine</span><br />107 cu</h2>
+          <h2>
+            <span>torque</span><br />
+            111 ft-lb
+          </h2>
+        </div>
+        <div class="slides">
+          <h2><span>fuel eco</span><br />43 mpg</h2>
+          <h2>
+            <span>lean angle</span><br />
+            32deg
+          </h2>
+        </div>
+        <div class="slides">
+          <h2><span>wheelbase</span><br />64 in.</h2>
+          <h2>
+            <span>weight</span><br />
+            794 lb
+          </h2>
+        </div>
+      </div>
+      <div class="footer">
+        <ul class="sci">
+          <li>
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          </li>
+          <li>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          </li>
+          <li>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          </li>
+        </ul>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const navigation = document.querySelector(".navigation");
+      toggle.onclick = function () {
+        toggle.classList.toggle("active");
+        navigation.classList.toggle("active");
+      };
+
+      const slides = document.querySelectorAll(".slides");
+      const dots = document.querySelectorAll(".dot");
+
+      function setActive(i) {
+        for (slide of slides) slide.classList.remove("active");
+        slides[i].classList.add("active");
+
+        for (dot of dots) dot.classList.remove("active");
+        dots[i].classList.add("active");
+      }
+
+      for (let j = 0; j < dots.length; j++) {
+        dots[j].addEventListener("click", function () {
+          setActive(j);
+        });
+      }
+    </script>
+  </body>
+</html>
